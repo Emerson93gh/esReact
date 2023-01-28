@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Saludar, User } from "./Saludo";
 import Producto, { Navbar } from "./Producto";
+import { Button } from "./Button"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -26,5 +27,8 @@ root.render(
       address={{ street: "321 Main Street", city: "New York" }}
       greet={function () {alert('Bye')}}
     />
+    <Button text="Click me"/>
+    <Button text="Pay"/>
+    <Button text="" name="Joe" />
   </>
 );
