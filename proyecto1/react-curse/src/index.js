@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Saludar, User } from "./Saludo";
-import Producto, { Navbar } from "./Producto";
-import { Button } from "./Button"
+// import { Saludar, User } from "./Saludo";
+// import Producto, { Navbar } from "./Producto";
+//import { Button } from "./Button"
+import { TaskCard } from "./Task"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -11,7 +12,7 @@ root.render(
     {/* <Saludar title="Hola mundo" />
     <Saludar title="Hola React" />
     <Saludar title="Hola JSX" /> */}
-    <User
+    {/* <User
       name="eSolano"
       amount={300}
       married={false}
@@ -29,6 +30,7 @@ root.render(
     />
     <Button text="Click me"/>
     <Button text="Pay"/>
-    <Button text="" name="Joe" />
+    <Button text="" name="Joe" /> */}
+    <TaskCard ready={true} />
   </>
 );
