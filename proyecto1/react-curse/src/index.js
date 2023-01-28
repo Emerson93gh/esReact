@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Saludar } from "./Saludar";
 // import { Saludar, User } from "./Saludo";
 // import Producto, { Navbar } from "./Producto";
 //import { Button } from "./Button"
@@ -32,5 +33,6 @@ root.render(
     <Button text="Pay"/>
     <Button text="" name="Joe" /> */}
     <TaskCard ready={true} />
+    <Saludar />
   </>
 );
