@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Button } from "./Button";
+import { Posts } from "./Posts";
 import { Saludar } from "./Saludar";
 // import { Saludar, User } from "./Saludo";
 // import Producto, { Navbar } from "./Producto";
@@ -62,5 +63,7 @@ root.render(
       <h1>Registro de usuarios</h1>
       <button>Enviar</button>
     </form>
+
+    <Posts />
   </>
 );
