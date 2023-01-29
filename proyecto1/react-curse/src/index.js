@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Button } from "./Button";
 import { Saludar } from "./Saludar";
 // import { Saludar, User } from "./Saludo";
 // import Producto, { Navbar } from "./Producto";
-//import { Button } from "./Button"
-import { TaskCard } from "./Task"
+import { TaskCard } from "./Task";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const handleChange = (e) => {console.log(e.target.value)}
+
 
 root.render(
   <>
@@ -34,5 +37,30 @@ root.render(
     <Button text="" name="Joe" /> */}
     <TaskCard ready={true} />
     <Saludar />
+    <Button text="Saludar" />
+
+    {/* Manejador de evento - ES5 (ecmascript 5)
+    <input
+      id="hola"
+      onChange={function (e) {
+        console.log(e.target.value);
+      }}
+    /> */}
+    {/* ES6 - Array function 
+    <input
+      id="hola"
+      onChange={(e) => {
+        console.log(e.target.value);
+      }}
+    /> */}
+    <input id="hola" onChange={handleChange} />
+
+    <form onSubmit={(e) => {
+      e.preventDefault()
+      alert('Enviado')
+    }}>
+      <h1>Registro de usuarios</h1>
+      <button>Enviar</button>
+    </form>
   </>
 );

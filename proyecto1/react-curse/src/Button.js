@@ -6,7 +6,10 @@ export function Button({text, name = ''}) {
     if(!text) {
         console.error('El texto es requerido');
     }
-    return <button>
+    // event handlers o manejador de eventos
+    return <button onClick={function () {
+        console.log('Hola desde boton')
+    }}>
         {text} - {name}
     </button>
 }
