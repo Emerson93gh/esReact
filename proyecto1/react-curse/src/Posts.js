@@ -1,3 +1,6 @@
+//Modulos de terceros - react-icons
+import { VscBug } from 'react-icons/vsc'
+
 // Fetch API
 export const Posts = () => {
     return <button onClick={(e) => {
@@ -6,6 +9,7 @@ export const Posts = () => {
             .then(data => console.log(data))
             .catch(error => console.error(error))
     }}>
+        <VscBug />
         Traer datos
     </button>
 }
