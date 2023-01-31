@@ -9,8 +9,22 @@ import { TaskCard } from "./Task";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const handleChange = (e) => {console.log(e.target.value)}
+const handleChange = (e) => {
+  console.log(e.target.value);
+};
 
+const users = [
+  {
+    id: 1,
+    name: "Clark Cvas",
+    image: "https://robohash.org/alex",
+  },
+  {
+    id: 2,
+    name: "Kelvin",
+    image: "https://robohash.org/oscar",
+  },
+];
 
 root.render(
   <>
@@ -56,14 +70,24 @@ root.render(
     /> */}
     <input id="hola" onChange={handleChange} />
 
-    <form onSubmit={(e) => {
-      e.preventDefault()
-      alert('Enviado')
-    }}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert("Enviado");
+      }}
+    >
       <h1>Registro de usuarios</h1>
       <button>Enviar</button>
     </form>
 
     <Posts />
+
+    {/* Arrays */}
+    {users.map((user, index) => {
+      return <div key={index}>
+        <h1>{user.name}</h1>
+        <img src={user.image} />
+      </div>;
+    })}
   </>
 );
