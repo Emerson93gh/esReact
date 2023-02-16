@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import { Button } from "./Button";
 import { Posts } from "./Posts";
@@ -83,11 +83,52 @@ root.render(
     <Posts />
 
     {/* Arrays */}
-    {users.map((user, index) => {
+    {/* {users.map((user, index) => {
       return <div key={index}>
         <h1>{user.name}</h1>
         <img src={user.image} />
       </div>;
-    })}
+    })} */}
+
+    {/* React Hooks, useState */}
+    <Counter/>
   </>
 );
+
+function Counter() {
+  //let counter = 0;
+  // useState utiliza o recibe dos valores, una variable y una funcion
+  //const [ counter, setCounter ] = useState(0);
+  const [ mensaje, setMensaje ] = useState('');
+
+  return (
+    // <div>
+    //   <h1>Counter: {counter}</h1>
+    //   <button onClick={() => {
+    //     //counter = counter + 10;
+    //     //setCounter(20);
+    //     setCounter( counter + 1 );
+    //   }} >
+    //     Sumar
+    //   </button>
+    //   <button onClick={() => {
+    //     setCounter( counter - 1 );
+    //   }} >
+    //     Restar
+    //   </button>
+    //   <button onClick={() => {
+    //     setCounter( 0 );
+    //   }} >
+    //     Reiniciar
+    //   </button>
+    // </div>
+    <div>
+      <input onChange={e => setMensaje(e.target.value)} />
+      <button onClick={ () => {
+        alert('El mensaje es: ' + mensaje);
+      }} >
+        Save
+      </button>
+    </div>
+  )
+}
