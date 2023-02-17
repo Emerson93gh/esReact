@@ -1,7 +1,12 @@
 // rfce - de ext ES7 React Snnipets
+
+import TaskList from './TaskList'
+
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <TaskList />
+    </div>
   )
 }
 
