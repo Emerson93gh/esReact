@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import { Button } from "./Button";
 import { Posts } from "./Posts";
@@ -100,6 +100,13 @@ function Counter() {
   // useState utiliza o recibe dos valores, una variable y una funcion
   //const [ counter, setCounter ] = useState(0);
   const [ mensaje, setMensaje ] = useState('');
+  const [ counter, setCounter ] = useState(0);
+
+  // useEffect, cuando vamos a tener cambios en la interfaz
+  useEffect(function () { // o array funtion () => {}
+    console.log('render');
+  }, [ ]) // vacio, para ejecutarlo una sola vez. O para ingresar un valor dependiente en otro estado
+  // ejemplo: }, [ counter ]) al utilizar el useEffect vigila si cambia el valor
 
   return (
     // <div>
@@ -128,6 +135,13 @@ function Counter() {
         alert('El mensaje es: ' + mensaje);
       }} >
         Save
+      </button>
+      <hr/>
+      <h1>Counter: {counter} </h1>
+      <button onClick={() => {
+        setCounter(counter + 1);
+      }} >
+        Incrementar
       </button>
     </div>
   )
