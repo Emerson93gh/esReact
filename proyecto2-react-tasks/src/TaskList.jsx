@@ -1,22 +1,14 @@
-import { tasks as data } from "./tasks"
-import {useState, useEffect} from 'react'
-
 // clg - ext ES7 React
 //console.log(tasks)
 
-function TaskList() {
-    const [tasks, setTasks] = useState([])
+function TaskList(props) {
 
-    useEffect(() => {
-        setTasks(data)
-    }, [])
-
-    if (tasks.length === 0) {
+    if (props.tasks.length === 0) {
         return <h1>No hay tareas</h1>
     }
   return (
     <div>
-        { tasks.map((task) => (
+        { props.tasks.map((task) => (
             <div key={task.id}>
                 <h1> { task.title } </h1>
                 <p> { task.description } </p>
