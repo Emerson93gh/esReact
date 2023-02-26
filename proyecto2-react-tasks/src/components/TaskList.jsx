@@ -2,14 +2,14 @@
 //console.log(tasks)
 import TaskCard from "./TaskCard";
 
-function TaskList(props) {
-  if (props.tasks.length === 0) {
+function TaskList({tasks, deleteTask}) { //props
+  if (tasks.length === 0) {
     return <h1>No hay tareas</h1>;
   }
   return (
     <div>
-      {props.tasks.map((task) => (
-        <TaskCard key={task.id} task={task} />
+      {tasks.map((task) => (
+        <TaskCard key={task.id} task={task} deleteTask={deleteTask} />
       ))}
     </div>
   );

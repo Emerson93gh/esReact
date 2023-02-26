@@ -20,10 +20,16 @@ function App() {
     }]);
   }
 
+  function deleteTask(taskId) {
+    //console.log(tasks);
+    //console.log(taskId);
+    setTasks(tasks.filter(task => task.id !== taskId));
+  }
+
   return (
     <div>
       <TaskForm createTask={createTask} />
-      <TaskList tasks={tasks}/>
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 }
