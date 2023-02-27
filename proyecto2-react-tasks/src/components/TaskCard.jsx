@@ -1,9 +1,11 @@
-import {React} from "react";
+import { React, useContext } from "react";
+import { TaskContext } from '../context/TaskContext';
 
-function TaskCard({task, deleteTask}) { // props
+function TaskCard({task}) { // props
   // function eliminarTarea() {
   //   alert('Eliminando...');
   // }
+  const { deleteTask } = useContext(TaskContext);
 
   return (
     <div>
