@@ -5,10 +5,12 @@ import TaskForm from "./components/TaskForm";
 
 function App() {
   return (
-    <>
-      <TaskForm />
-      <TaskList />
-    </>
+    <main className="h-screen">
+      <div className="container mx-auto p-4">
+        <TaskForm />
+        <TaskList />
+      </div>
+    </main>
   );
 }
 
